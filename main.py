@@ -37,7 +37,26 @@ if False:
 
 
 # part b
-if True:
+if False:
 	ball = Cannonball(planet='Mars', m=1, C=0.47, R=0.08, theta=30.0, v0=100)
 	x, y = ball.RK()
 	print(x[-1])
+
+
+# part c
+xmax = 0
+v1 = 0
+v2 = 2000
+if True:
+	while not(xmax > 600000 and xmax < 601000):
+		v0 = (v1 + v2)/2
+		print('velocity = {0:.2f}'.format(v0))
+		ball = Cannonball(planet='Mars', m=1, C=0.47, R=0, theta=30, v0=v0)
+		x, y = ball.RK()
+		xmax = x[-1]
+		print('xmax = {0:.2f}'.format(xmax))
+		if xmax < 600000:
+			v1 = v0
+		else:
+			v2 = v0
+print(np.max(y))
