@@ -34,3 +34,10 @@ if False:
 
 	plt.savefig('../plot/{0}_part_a.pdf'.format(planet), transparent=True)
 	plt.show()
+
+
+# part b
+if True:
+	ball = Cannonball(planet='Mars', m=1, C=0.47, R=0.08, theta=30.0, v0=100)
+	x, y = ball.RK()
+	print(x[-1])
